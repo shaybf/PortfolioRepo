@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques Des Clubs</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Chart.js or Plotly -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=EduLink+Logo" alt="EduLink Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Statistiques</a></li>
+                    <li><a href="#">Inscriptions</a></li>
+                    <li><a href="#" class="active">Clubs</a></li>
+                    <li><a href="#">Moyennes</a></li>
+                    <li><a href="#">Clubs & Activités</a></li>
+                    <li><a href="#">Evénements</a></li>
+                    <li><a href="#">Actualité</a></li>
+                    <li><a href="#">Inscription</a></li>
+                    <li><a href="#">Cantine</a></li>
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#">Emploi Du Temps</a></li>
+                    <li><a href="#">Absence Élève</a></li>
+                    <li><a href="#">Réunion</a></li>
+                    <li><a href="#">Absence Profs</a></li>
+                    <li><a href="#">Notes</a></li>
+                    <li><a href="#">Bulletins</a></li>
+                    <li><a href="#">Methodes De Payment</a></li>
+                    <li><a href="#">Personnel</a></li>
+                    <li><a href="#">Charge</a></li>
+                    <li><a href="#">Type Charge</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <header>
+                <h1>Statistiques Des Clubs</h1>
+            </header>
+            <section class="overview">
+                <div class="overview-content">
+                    <h2>Statistiques Des Clubs</h2>
+                    <p>Bienvenue sur la page dédiée aux statistiques des Clubs & Activités. Vous y trouverez une vue détaillée des données essentielles pour suivre l'engagement, analyser les performances et prendre des décisions éclairées sur vos clubs et activités.</p>
+                </div>
+                <img src="https://via.placeholder.com/300x150?text=Overview+Image" alt="Overview Image">
+            </section>
+            <section class="stats">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <p>Nombre des inscrits dans tous les clubs</p>
+                        <h3>50</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-info">
+                        <p>Gain réalisé par tous les clubs</p>
+                        <h3>50</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="charts">
+                <div class="chart-container">
+                    <h3>Nombre des inscrits par club</h3>
+                    <canvas id="bar-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Gain réalisé par club</h3>
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to render the charts -->
+    <script>
+        // Bar Chart
+        var ctxBar = document.getElementById('bar-chart').getContext('2d');
+        var barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Club 1', 'Club 2', 'Club 3', 'Club 4', 'Club 5', 'Club 6', 'Club 7'],
+                datasets: [{
+                    label: 'Nombre des inscrits',
+                    data: [3, 6, 5, 7, 2, 6, 5],
+                    backgroundColor: ['#63e6be', '#74c0fc', '#ff922b', '#fcc419', '#ff922b', '#f06595', '#845ef7'],
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Pie Chart
+        var ctxPie = document.getElementById('pie-chart').getContext('2d');
+        var pieChart = new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+                labels: ['Club 1', 'Club 2', 'Club 3', 'Club 4'],
+                datasets: [{
+                    label: 'Gain réalisé',
+                    data: [1000, 1000, 1000, 1000],
+                    backgroundColor: ['#63e6be', '#74c0fc', '#ff922b', '#fcc419'],
+                }]
+            },
+            options: {
+                responsive: true,
+            }
+        });
+    </script>
+</body>
+</html>

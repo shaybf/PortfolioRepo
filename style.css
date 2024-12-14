@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4faff;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar nav ul li a.active, 
+.sidebar nav ul li a:hover {
+    background-color: #e6f7ff;
+    color: #007bff;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.overview {
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overview-content {
+    color: #fff;
+    max-width: 60%;
+}
+
+.overview h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.overview p {
+    font-size: 16px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex-basis: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-icon {
+    font-size: 40px;
+    margin-right: 20px;
+    color: #007bff;
+    background-color: #e6f7ff;
+    padding: 15px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-info p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.stat-info h3 {
+    font-size: 30px;
+    color: #333;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex-basis: 48%;
+}
+
+.chart-container h3 {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}

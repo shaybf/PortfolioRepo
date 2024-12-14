@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques Des Performance Académique</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=EduLink+Logo" alt="EduLink Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Statistiques</a></li>
+                    <li><a href="#">Inscriptions</a></li>
+                    <li><a href="#" class="active">Clubs</a></li>
+                    <li><a href="#">Moyennes</a></li>
+                    <li><a href="#">Clubs & Activités</a></li>
+                    <li><a href="#">Evénements</a></li>
+                    <li><a href="#">Actualité</a></li>
+                    <li><a href="#">Inscription</a></li>
+                    <li><a href="#">Cantine</a></li>
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#">Emploi Du Temps</a></li>
+                    <li><a href="#">Absence Élève</a></li>
+                    <li><a href="#">Réunion</a></li>
+                    <li><a href="#">Absence Profs</a></li>
+                    <li><a href="#">Notes</a></li>
+                    <li><a href="#">Bulletins</a></li>
+                    <li><a href="#">Methodes De Payment</a></li>
+                    <li><a href="#">Personnel</a></li>
+                    <li><a href="#">Charge</a></li>
+                    <li><a href="#">Type Charge</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <header>
+                <h1>Statistiques Des Performance Académique</h1>
+            </header>
+            <section class="overview">
+                <div class="overview-content">
+                    <h2>Statistiques De Performance Académique</h2>
+                    <p>Bienvenue sur la page des Statistiques de Performance Académique. Découvrez ici des analyses détaillées des résultats scolaires, vous permettant de suivre les tendances, évaluer les réussites et comprendre les dynamiques académiques.</p>
+                </div>
+                <img src="https://via.placeholder.com/300x150?text=Overview+Image" alt="Overview Image">
+            </section>
+            <section class="charts">
+                <div class="chart-container large">
+                    <h3>Moyenne générale des classes</h3>
+                    <canvas id="bar-chart"></canvas>
+                </div>
+                <div class="chart-container small">
+                    <h3>Moyenne générale des niveaux</h3>
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            </section>
+            <section class="ranking">
+                <div class="ranking-table">
+                    <h3>Classement des élèves par classe</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Chaima Ben Farhat</td><td class="score high">16.5</td></tr>
+                            <tr><td>2</td><td>Chaima Ben Farhat</td><td class="score high">16.41</td></tr>
+                            <tr><td>3</td><td>Chaima Ben Farhat</td><td class="score mid">15.04</td></tr>
+                            <tr><td>4</td><td>Chaima Ben Farhat</td><td class="score mid">12.30</td></tr>
+                            <tr><td>5</td><td>Chaima Ben Farhat</td><td class="score low">11.63</td></tr>
+                            <tr><td>6</td><td>Chaima Ben Farhat</td><td class="score low">8.5</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ranking-table">
+                    <h3>Classement des élèves par niveau</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>1ère année A</td><td class="score high">16.5</td></tr>
+                            <tr><td>2</td><td>1ère année B</td><td class="score high">16.41</td></tr>
+                            <tr><td>3</td><td>1ère année C</td><td class="score mid">15.04</td></tr>
+                            <tr><td>4</td><td>1ère année D</td><td class="score mid">12.30</td></tr>
+                            <tr><td>5</td><td>1ère année E</td><td class="score low">11.63</td></tr>
+                            <tr><td>6</td><td>1ère année F</td><td class="score low">8.5</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to render the charts -->
+    <script>
+        // Bar Chart
+        var ctxBar = document.getElementById('bar-chart').getContext('2d');
+        var barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['1ère année A', '1ère année B', '1ère année C', '1ère année D', '1ère année E', '1ère année F'],
+                datasets: [{
+                    label: 'Moyenne',
+                    data: [13.5, 13.5, 13.5, 13.5, 13.5, 13.5],
+                    backgroundColor: ['#63e6be', '#74c0fc', '#ff922b', '#fcc419', '#ff922b', '#f06595', '#845ef7'],
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Pie Chart
+        var ctxPie = document.getElementById('pie-chart').getContext('2d');
+        var pieChart = new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+                labels: ['1ère année', '2ème année', '3ème année', '4ème année'],
+                datasets: [{
+                    label: 'Moyenne',
+                    data: [17, 16.53, 15.94, 15.04],
+                    backgroundColor: ['#63e6be', '#74c0fc', '#ff922b', '#fcc419'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true, // Ensure the chart maintains its aspect ratio
+                cutout: '70%',  // Create a donut chart with a larger cutout
+                plugins: {
+                    legend: {
+                        position: 'right',  // Position the legend to the right of the chart
+                        labels: {
+                            boxWidth: 10, // Adjust the size of the legend color boxes
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
